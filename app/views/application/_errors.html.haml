@@ -1,4 +1,4 @@
-.alert.alert-danger 
+.alert.alert-danger
     %ul.mb-0
-        - errors.full_messages.each do |m|
-            %li = m
+        - errors.full_messages.each do |message|
+            %li= message
