@@ -13,10 +13,7 @@ class Event < ApplicationRecord
         return unless start_at && end_at
 
         if start_at >= end_at
-            error.add("開始時間と衆力時間に不備があります")
+            error.add("開始時間と入力時間に不備があります")
         end
     end
-
-    '
-
 end
