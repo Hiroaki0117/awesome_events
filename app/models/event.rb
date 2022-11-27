@@ -7,6 +7,12 @@ class Event < ApplicationRecord
     validates :start_at, presence: true
     validates :end_at, presence: true
     validate :start_at_should_be_before_end_at 
+
+    # イベントを作成したユーザかどうか判断
+    def created_by?(user)
+        return false unless user
+        owner_id == user.id
+    end
     
     private
     
