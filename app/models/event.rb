@@ -1,6 +1,8 @@
 class Event < ApplicationRecord
     belongs_to :owner, class_name:"User"
-    has_many :tickets
+
+    # イベントが削除されたときに参加情報も同時に削除
+    has_many :tickets, dependent: :destroy
     
     validates :name, length: {maximum:50}, presence: true
     validates :place, length: {maximum:100}, presence: true
