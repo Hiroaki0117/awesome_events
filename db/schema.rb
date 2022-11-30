@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2022_11_27_030921) do
 
   create_table "events", force: :cascade do |t|
-    t.bigint "owner_id", null: false
+    t.bigint "owner_id"
     t.string "name", null: false
     t.string "place", null: false
     t.datetime "start_at", null: false
