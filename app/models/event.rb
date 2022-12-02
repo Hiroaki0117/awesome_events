@@ -18,6 +18,11 @@ class Event < ApplicationRecord
     validates :end_at, presence: true
     validate :start_at_should_be_before_end_at 
 
+    
+    validates :image,
+        content_type: [:png, :jpg, :jpeg],                  # 画像のタイプ指定
+        size: { less_than_or_equal_to: 10.megabytes}        # バイト指定
+
     # イベントを作成したユーザかどうか判断
     def created_by?(user)
         return false unless user
